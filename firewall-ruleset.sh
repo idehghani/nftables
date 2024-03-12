@@ -42,5 +42,5 @@ nft add rule inet my_firewall forward ip saddr @zone0 ip daddr @zone200 drop
 
 # Rule 7: The public host PC1 can access Zone 100 with ping and HTTP through port forwarding
 # Note: Adjust 'iifname' to your external interface and the dnat IP to your web server's internal IP
-nft add rule inet my_firewall prerouting iifname "eth0" tcp dport 80 dnat to 192.168.1.100:80
+nft add rule inet my_firewall prerouting iifname "ens33" tcp dport 80 dnat to 192.168.1.100:80
 nft add rule inet my_firewall forward ip saddr @zone0 ip daddr @zone100 tcp dport 80 accept
